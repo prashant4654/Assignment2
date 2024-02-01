@@ -1,3 +1,4 @@
+%\iffalse
 \let\negmedspace\undefined
 \let\negthickspace\undefined
 \documentclass[journal,12pt,twocolumn]{IEEEtran}
@@ -12,66 +13,26 @@
 \usepackage{enumitem}
 \usepackage{mathtools}
 \usepackage{gensymb}
+\usepackage{comment}
 \usepackage[breaklinks=true]{hyperref}
-\usepackage{tkz-euclide} % loads  TikZ and tkz-base
+\usepackage{tkz-euclide} 
 \usepackage{listings}
-\usepackage{gvv}
-%
-%\usepackage{setspace}
-%\usepackage{gensymb}
-%\doublespacing
-%\singlespacing
+\usepackage{gvv}  
+\usepackage{tikz}
+\usepackage{circuitikz} 
+\usepackage{caption}
 
-%\usepackage{graphicx}
-%\usepackage{amssymb}
-%\usepackage{relsize}
-%\usepackage[cmex10]{amsmath}
-%\usepackage{amsthm}
-%\interdisplaylinepenalty=2500
-%\savesymbol{iint}
-%\usepackage{txfonts}
-%\restoresymbol{TXF}{iint}
-%\usepackage{wasysym}
-%\usepackage{amsthm}
-%\usepackage{iithtlc}
-%\usepackage{mathrsfs}
-%\usepackage{txfonts}
-%\usepackage{stfloats}
-%\usepackage{bm}
-%\usepackage{cite}
-%\usepackage{cases}
-%\usepackage{subfig}
-%\usepackage{xtab}
-%\usepackage{longtable}
-%\usepackage{multirow}
-%\usepackage{algorithm}
-%\usepackage{algpseudocode}
-%\usepackage{enumitem}
-%\usepackage{mathtools}
-%\usepackage{tikz}
-%\usepackage{circuitikz}
-%\usepackage{verbatim}
-%\usepackage{tfrupee}
-%\usepackage{stmaryrd}
-%\usetkzobj{all}
-%    \usepackage{color}                                            %%
-%    \usepackage{array}                                            %%
-%    \usepackage{longtable}                                        %%
-%    \usepackage{calc}                                             %%
-%    \usepackage{multirow}                                         %%
-%    \usepackage{hhline}                                           %%
-%    \usepackage{ifthen}                                           %%
-  %optionally (for landscape tables embedded in another document): %%
-%    \usepackage{lscape}     
-%\usepackage{multicol}
-%\usepackage{chngcntr}
-%\usepackage{enumerate}
-
-%\usepackage{wasysym}
-%\documentclass[conference]{IEEEtran}
-%\IEEEoverridecommandlockouts
-% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
-
+\def\inputGnumericTable{}                                
+\usepackage[latin1]{inputenc}                 
+\usepackage{color}                            
+\usepackage{array}                            
+\usepackage{longtable}                        
+\usepackage{calc}                            
+\usepackage{multirow}                      
+\usepackage{hhline}                           
+\usepackage{ifthen}                          
+\usepackage{lscape}
+\usepackage{amsmath}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{problem}{Problem}
 \newtheorem{proposition}{Proposition}[section]
@@ -79,17 +40,13 @@
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{example}{Example}[section]
 \newtheorem{definition}[problem]{Definition}
-%\newtheorem{thm}{Theorem}[section] 
-%\newtheorem{defn}[thm]{Definition}
-%\newtheorem{algorithm}{Algorithm}[section]
-%\newtheorem{cor}{Corollary}
 \newcommand{\BEQA}{\begin{eqnarray}}
 \newcommand{\EEQA}{\end{eqnarray}}
 \newcommand{\define}{\stackrel{\triangle}{=}}
 \theoremstyle{remark}
 \newtheorem{rem}{Remark}
 
-%\bibliographystyle{ieeetr}
+
 \begin{document}
 %
 
@@ -100,7 +57,7 @@
 
 \title{
 %	\logo{
-Assignment-1 
+Assignment-2 
 
 \large{EE:1205 Signals and System}
 
@@ -184,8 +141,8 @@ EE23BTECH11218
 
 \bigskip
 
-\renewcommand{\thefigure}{\theenumi}
-\renewcommand{\thetable}{\theenumi}
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\thetable}{\arabic{table}}
 %\renewcommand{\theequation}{\theenumi}
 
 %\begin{abstract}
@@ -218,35 +175,45 @@ EE23BTECH11218
 %\IEEEpeerreviewmaketitle	
 \section{Question 11.9.2 - 2} Find the sum of all natural numbers lying\\ between 100 and 1000, which are
 multiples of 5.
-\section{Solution}\begin{flushleft}
-The natural numbers lying between 100 and 1000,which are multiples of 5, are 105,110,......,995.\\
-\end{flushleft}
-Here
+\section{Solution}
+\begin{table}[!h]
+	\centering
+	\input{table1}
+	\vspace{6 pt}
+	\caption{Given Parameters}
+	\label{tab:enter-label}
+\end{table}
 \begin{align}
-\label{eq:tri-pts/1}a&=105\\
-\label{eq:tri-pts/2}d&=5
+	x\brak{n}= & \brak{105+5n}\brak{u(n)}\\
+X\brak{z}= &\frac {x\brak{0}} {\brak{1-z^{-1}}} + \frac {dz^{-1}} {\brak{1-z^{-1}}^2} \\
+= &\dfrac{105}{1-z^{-1}} + \frac{5z^{-1}}{\brak{1-z^{-1}}^{2}}\\
+X(z)=& \dfrac{105-100z^{-1}}{{(1-z^{-1})}^2} , |z|>1\\
+y\brak{n}=& x(n)* u(n)\\
+Y(z)=& X(z)U(z) \\
+=& \dfrac{105-100z^{-1}}{{(1-z^{-1})}^2}\frac1 {(1-z^{-1})} \\
+=& \dfrac{105-100z^{-1}}{(1-z^{-1})^{3}}, |z|>1
+\end{align}
+Using contour integration to find the inverse Z-transform:\\
+\begin{align}
+    \implies y(178)=&\dfrac{1}{2\pi j}\oint_{C}Y(z) \;z^{177} \;dz\\
+    =&\dfrac{1}{2\pi j}\oint_{C}\dfrac{(105-100z^{-1}){z^{177}}}{({1-z^{-1})}^{3}} \;dz 
+\end{align}
+We can observe that there is only a 3 times repeated pole at z=1,
+\begin{align}
+    \implies R&=\dfrac{1}{\brak {m-1}!}\lim\limits_{z\to a}\dfrac{d^{m-1}}{dz^{m-1}}\brak {{(z-a)}^{m}f\brak z}  
 \end{align}
 \begin{align}
-\label{eq:tri-pts/3}a_n&=a+(n-1)d
-\end{align}
-From \eqref{eq:tri-pts/3}
-\begin{align}
-105+(n-1)5&=995\\
-(n-1)5&=995-105=890\\
-n-1&=178\\
-n&=179
+    &=\dfrac{1}{\brak {2}!}\lim\limits_{z\to 1}\dfrac{d^{2}}{dz^{2}}\brak {{(z-1)}^{3}\dfrac{(105-100z^{-1})z^{180}}{{(z-1)}^3}}   \\
+    &=\frac{\lim\limits_{z\to 1}\dfrac{d^2}{dz^2}(105z^{180}-100z^{179})}{(2!)}\\
+    &=98450
 \end{align}
 \begin{align}
-\label{eq:tri-pts/8}S_n&=\frac{n}{2}[2a+(n-1)d]
+    \therefore \boxed{y(178)=98450}
 \end{align}
-From \eqref{eq:tri-pts/8}
-\begin{align}
-\therefore S_n&=\frac{179}{2}[2(105)+(179-1)(5)]\\
-	&=\frac{179}{2}[2(105)+(178)(5)]\\
-	&=179[105+(89)5]\\
-	&=(179)(105+445)\\
-	&=(179)(550)\\
-	&=98450
-\end{align}
-Thus, the sum of all natural numbers lying between 100 and 1000,which are multiples of 5,is 98450.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\columnwidth]{Figures/fig1.png}
+    \caption{Plot of y(n) $vs$ n}
+    \label{fig: 10.5.3.12}
+\end{figure}
 \end{document}
