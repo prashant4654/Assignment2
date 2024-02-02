@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.5)  1 FEB 2024 15:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.5)  2 FEB 2024 11:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1403,10 +1403,11 @@ Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
 
-(./table1.tex
+(./tables/table1.tex
 LaTeX Font Info:    Trying to load font information for U+txsya on input line 1
 .
- (/usr/local/texlive/2023/texmf-dist/tex/latex/txfonts/utxsya.fd
+
+(/usr/local/texlive/2023/texmf-dist/tex/latex/txfonts/utxsya.fd
 File: utxsya.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Trying to load font information for U+txsyb on input line 1
@@ -1456,13 +1457,13 @@ Package rerunfilecheck Info: File `1.2.4.out' has not changed.
 (rerunfilecheck)             Checksum: 703B740BAD703809689BC0395EC56B91;230.
  ) 
 Here is how much of TeX's memory you used:
- 47488 strings out of 476025
- 1107026 string characters out of 5790018
- 1883388 words of memory out of 5000000
+ 47489 strings out of 476025
+ 1107068 string characters out of 5790018
+ 1882388 words of memory out of 5000000
  67192 multiletter control sequences out of 15000+600000
  578036 words of font info for 169 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 101i,13n,96p,1173b,438s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 101i,11n,96p,1173b,438s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></us
 r/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local
 /texlive/2023/texmf-dist/fonts/type1/public/txfonts/rtxsc.pfb></usr/local/texli
@@ -1471,7 +1472,7 @@ ve/2023/texmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/local/texlive/2023
 dist/fonts/type1/public/txfonts/txsya.pfb></usr/local/texlive/2023/texmf-dist/f
 onts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1
 /urw/times/utmri8a.pfb>
-Output written on 1.2.4.pdf (1 page, 68677 bytes).
+Output written on 1.2.4.pdf (1 page, 68516 bytes).
 PDF statistics:
  90 PDF objects out of 1000 (max. 8388607)
  68 compressed objects within 1 object stream
